@@ -1,0 +1,42 @@
+<div class="admin-page container column">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h1 class="panel-title">
+                User Information
+            </h1>
+        </div>
+        <div class="panel-body well">
+            <div class="col-sm-3 col-xs-6"><h5>First Name :</h5></div><div class="col-sm-3 col-xs-6"><h5>{{admin.user.FirstName || "none"}}</h5></div>
+            <div class="col-sm-3 col-xs-6"><h5>Last Name :</h5></div><div class="col-sm-3 col-xs-6"><h5>{{admin.user.LastName || "none"}}</h5></div>
+            <div class="col-sm-3 col-xs-6"><h5>Email :</h5></div><div class="col-sm-3 col-xs-6"><h5>{{admin.user.Email || "none"}}</h5></div>
+            <div class="col-sm-3 col-xs-6"><h5>Phone :</h5></div><div class="col-sm-3 col-xs-6"><h5>{{admin.user.Phone || "none"}}</h5></div>
+            <div class="col-sm-3 col-xs-6"><h5>Username :</h5></div><div class="col-sm-3 col-xs-6"><h5>{{admin.user.Username || "none"}}</h5></div>
+            <div class="col-sm-3 col-xs-6"><h5>UserID :</h5></div><div class="col-sm-3 col-xs-6"><h5>{{admin.user.ID || "none"}}</h5></div>
+
+        </div>
+    </div>
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h1 class="panel-title">
+                Subscriptions
+            </h1>
+        </div>
+        <div class="panel-body well">
+            <div class="media" ng-repeat="lineitem in admin.orderList">
+                <div class="media-left">
+                    <a ui-sref="products/{{lineitem.ID}}">
+                        <img class="media-object" src="http://www.versapay.com/wp-content/uploads/2015/05/TSI-logo.jpg">
+                    </a>
+                </div>
+                <div class="media-body">
+                    <h4 class="media-heading">{{lineitem.Name}}</h4>
+                    {{lineitem.Description}}
+                </div>
+                <div class="media-right">
+                    <h6>Download</h6>
+                    <a href="/assets/license.txt" download="liscense.txt"><i class="fa fa-download fa-2x"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
